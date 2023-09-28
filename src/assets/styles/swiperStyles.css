@@ -1,0 +1,73 @@
+.swiper-pagination-bullet-active {
+    background-color: #264b77 !important;
+  }
+  
+  .swiper-wrapper {
+   
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 10px !important; 
+    height: 10px !important;
+  }
+  
+  .swiper-button-next {
+    color: #264b77 !important; 
+  }
+  
+  .swiper-button-prev {
+    color: #264b77 !important;
+  }
+  
+  .swiper-button-disabled {
+    color: #264b77 !important;
+    opacity: 0.3 !important;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .swiper-button-next {
+      display: none !important;
+    }
+  
+    .swiper-button-prev {
+      display: none !important;
+    }
+  }
+  
+  .features-block h3 {
+    margin-bottom: 20px; /* Ajusta el margen inferior del encabezado */
+  }
+  
+  .features-block ul {
+    display: grid;
+    margin-top: 20px; /* Ajusta el margen superior de la lista de características */
+  }
+  
+  .features-block li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* Ajusta el margen vertical entre los elementos */
+  }
+  
+  .features-block .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-block .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 767px) {
+    .features-block .md\:grid-cols-3 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  

@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model vehicle {
+  idvehicle          Int                  @id @default(autoincrement())
+  name               String 
+  plate              String          @unique(map: "plate_UNIQUE")
+  detail             String
+  year               Int
+  price_per_day      Float
+  long_description   String
+  images             image[]
+  specifications     specification[]
+  category           category?        @relation(fields: [categoryIdcategory], references: [idcategory], onDelete: SetNull)
+  categoryIdcategory Int?
+  model              model?          @relation(fields: [modelIdmodel], references: [idmodel])
+  modelIdmodel       Int?
+  dealer             dealer?              @relation(fields: [dealerIddealer], references: [iddealer])
+  dealerIddealer     Int?
+  reservation        reservation[]
+  availabilityPeriod availabilityPeriod[]
+  favorites          favorite[]
+  ratings            rating[]
+  deleted            Boolean
+}
+
+model brand {
+  idbrand Int     @id @default(autoincrement())
+  name    String  @unique(map: "name_UNIQUE")
+  url     String
+  models  model[]
+  deleted Boolean
+}
+
+model model {
+  idmodel      Int       @id @default(autoincrement())
+  name         String    @unique(map: "name_UNIQUE")
+  vehicles     vehicle[]
+  brand        brand?    @relation(fields: [brandIdbrand], references: [idbrand])
+  brandIdbrand Int?
+  deleted      Boolean
+}
+
+model dealer {
+  iddealer Int       @id @default(autoincrement())
+  vehicles vehicle[]
+  address  String
+  state    String
+  city     String
+  country  String
+  zip_code Int
+}
+
+model user {
+  iduser         Int           @id @default(autoincrement())
+  first_name     String?
+  last_name      String?
+  phone          Int?
+  email          String        @unique(map: "email_UNIQUE")
+  identification String?
+  password       String
+  address        String?
+  city           String?
+  state          String?
+  country        String?
+  zip_code       Int?
+  role           role          @relation(fields: [idrole], references: [idrole])
+  idrole         Int           @default(2)
+  reservation    reservation[]
+  favorites      favorite[]
+  ratings        rating[]
+  deleted        Boolean
+  order          order[]
+}
+
+model role {
+  idrole  Int     @id @default(autoincrement())
+  name    String
+  users   user[]
+  deleted Boolean
+}
+
+model image {
+  idimage          Int     @id @default(autoincrement())
+  url              String
+  vehicle          vehicle @relation(fields: [vehicleIdvehicle], references: [idvehicle])
+  vehicleIdvehicle Int
+  deleted          Boolean
+}
+
+model category {
+  idcategory    Int       @id @default(autoincrement())
+  name          String    @unique(map: "category_UNIQUE")
+  description   String
+  url           String
+  vehicles      vehicle[]
+  deleted       Boolean
+}
+
+model specification {
+  idspecification  Int     @id @default(autoincrement())
+  name             String
+  url              String
+  vehicle          vehicle @relation(fields: [vehicleIdvehicle], references: [idvehicle])
+  vehicleIdvehicle Int
+  deleted          Boolean
+}
+
+model favorite {
+  vehicle          vehicle @relation(fields: [idvehicle], references: [idvehicle], onDelete: Cascade)
+  idvehicle        Int
+  user             user @relation(fields: [iduser], references: [iduser], onDelete: Cascade)
+  iduser           Int
+  @@id([iduser, idvehicle])
+}
+
+model rating {
+  vehicle          vehicle @relation(fields: [idvehicle], references: [idvehicle], onDelete: Cascade)
+  idvehicle        Int
+  user             user @relation(fields: [iduser], references: [iduser], onDelete: Cascade)
+  iduser           Int
+  rate             Int
+  date             DateTime
+  description      String?
+  @@id([iduser, idvehicle])
+}
+
+model reservation {
+  idreservation    Int      @id @default(autoincrement())
+  checkin_date     DateTime
+  checkout_date    DateTime
+  vehicle          vehicle  @relation(fields: [vehicleIdvehicle], references: [idvehicle], onDelete: Cascade)
+  user             user     @relation(fields: [userIduser], references: [iduser], onDelete: Cascade)
+  vehicleIdvehicle Int
+  userIduser       Int
+}
+
+model order {
+  idorder    Int   @id @default(autoincrement())
+  days       Int
+  total      Float
+  user       user  @relation(fields: [userIduser], references: [iduser])
+  userIduser Int
+}
+
+model availabilityPeriod {
+  id        Int      @id @default(autoincrement())
+  startDate DateTime
+  endDate   DateTime
+  vehicle   vehicle  @relation(fields: [vehicleId], references: [idvehicle], onDelete: Cascade)
+  vehicleId Int
+}
