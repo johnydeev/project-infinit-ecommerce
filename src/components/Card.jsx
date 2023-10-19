@@ -51,7 +51,7 @@ export const Card = (props) => {
           <span className="text-gray-400">/day</span>
         </p>
         <button className="bg-primary font-semibold text-white px-8 py-3 rounded-tl-2xl hover:bg-tertiary transition-all duration-300 ease-in-out">
-          <Link href={`/vehicles/${props.vehicle.plate}`} passHref>
+          <Link href={`/vehicles/${props.vehicle.idvehicle}`} passHref>
             Details
           </Link>
         </button>

@@ -157,7 +157,7 @@ export const Form = () => {
     const response = await axios.post("/api/upload", formData);
 
     const object = {
-      name: "",
+      name: `${brand.name} ${model} ${year}`,
       plate: plate,
       detail: detail,
       year: +year,

@@ -2,10 +2,10 @@ import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
-export async function GET(request) {
+export async function GET(request, context) {
   console.log("La función GET ha sido llamada.");
   try {
-    const urlParts = request.url.split("/");
+    /*    const urlParts = request.url.split("/");
     const plate = urlParts[urlParts.length - 1];
     if (!plate) {
       return NextResponse.json(
@@ -13,49 +13,30 @@ export async function GET(request) {
         { status: 400 }
       );
     }
-    let car;
+    let car; */
 
     //This means it is an ID instead of a plate
-    if (parseInt(plate)) {
-      car = await prisma.vehicle.findUnique({
-        where: {
-          idvehicle: parseInt(plate),
-        },
-        include: {
-          dealer: true,
-          category: true,
-          specifications: true,
-          images: true,
-          model: {
-            include: {
-              brand: true,
-            },
+
+    console.log("====================================");
+    console.log(context.params.id);
+    console.log("====================================");
+
+    const car = await prisma.vehicle.findUnique({
+      where: {
+        idvehicle: parseInt(context.params.id),
+      },
+      include: {
+        dealer: true,
+        category: true,
+        specifications: true,
+        images: true,
+        model: {
+          include: {
+            brand: true,
           },
         },
-      });
-    } else {
-      car = await prisma.vehicle.findUnique({
-        where: {
-          plate,
-        },
-        include: {
-          dealer: true,
-          category: true,
-          specifications: true,
-          images: true,
-          ratings: {
-            include: {
-              user: true,
-            }
-          },
-          model: {
-            include: {
-              brand: true,
-            },
-          },
-        },
-      });
-    }
+      },
+    });
 
     if (!car) {
       return NextResponse.json(
@@ -154,7 +135,7 @@ export async function PUT(request) {
       ...otherData
     } = requestData;
 
-    console.log('requestData :>> ', requestData);
+    console.log("requestData :>> ", requestData);
 
     const updatedBrand = brand
       ? { connect: { idbrand: brand.idbrand } }

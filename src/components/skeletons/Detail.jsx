@@ -27,34 +27,33 @@ import swiperConfig from "@/utils/swiperConfig";
 import { Booking } from "@/components/Booking";
 import Characterist from "./characterist";
 
-
-const Detail = ({params}) => {
+const Detail = ({ params }) => {
   const [vehicle, setVehicle] = useState({});
   const router = useRouter();
   const [isGalleryOpen, setGalleryOpen] = useState(false);
   const [selectedImageId, setSelectedImageId] = useState(null);
 
   const fetchVehicle = async () => {
-    const res = await axios("/api/vehicle/"+params.plate);
+    const res = await axios("/api/vehicle/" + params.plate);
     //mocking images until DB is ready
     if (!res.data.images || !res.data.images.length) {
       res.data.images = [
         {
-          url: peugeot
+          url: peugeot,
         },
         {
-          url: peugeot2
+          url: peugeot2,
         },
         {
-          url: peugeot3
+          url: peugeot3,
         },
         {
-          url: peugeot4
+          url: peugeot4,
         },
         {
-          url: peugeot5
+          url: peugeot5,
         },
-      ]
+      ];
     }
     setVehicle(res.data);
   };
@@ -87,7 +86,13 @@ const Detail = ({params}) => {
         id="detail"
       >
         <div className="flex items-center justify-between">
-          <p className="text-2xl font-poppins font-semibold capitalize">{vehicle.model?.brand?.name +'  ' + vehicle.model?.name + '  '+vehicle.plate}</p>
+          <p className="text-2xl font-poppins font-semibold capitalize">
+            {vehicle.model?.brand?.name +
+              "  " +
+              vehicle.model?.name +
+              "  " +
+              vehicle.plate}
+          </p>
           {/* <button
             onClick={() => {
               router.back();
@@ -113,20 +118,8 @@ const Detail = ({params}) => {
             <p className="text-poppins text-2xl mt-10">Description</p>
 
             <p className="text-gray-400 text-xl">{vehicle.long_description}</p>
-          </div>        
-          <Characterist/>
-
-        <div class="flex justify-end">
-          <button
-            onClick={() => {
-              router.back();
-            }}
-            // className="text-xl text-blue-700 hover:text-purple-600"
-            className="w-1/6 bg-primary text-white p-4 rounded-md hover:bg-secondary transition-all duration-200"
-          >
-            Go back
-          </button>
-        </div>
+          </div>
+          <Characterist />
         </div>
       </div>
     </>

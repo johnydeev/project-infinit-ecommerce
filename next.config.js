@@ -18,9 +18,12 @@ const remPat = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: dom,
-    remotePatterns: remPat,
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 
   typescript: {

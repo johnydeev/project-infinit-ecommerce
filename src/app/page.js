@@ -12,6 +12,7 @@ import { CardList } from "@/components/CardList";
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 
 export default function Home() {
   const [vehicles, setVehicles] = useState([]);
@@ -49,7 +50,7 @@ export default function Home() {
         })}
       </div>
       <div className=" flex-wrap justify-center items-center gap-4 mt-20 flex lg:hidden">
-        <Swiper slidesPerView={3}>
+        <Swiper slidesPerView={1} modules={[Pagination, Navigation]} navigation pagination>
           {categories.map((category) => {
             return (
               <SwiperSlide>
