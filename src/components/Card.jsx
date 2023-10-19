@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
 import FavoriteButton from "./FavoriteButton";
 import { UserContext } from "@/components/context/UserContext";
-import honda from "@/assets/images/honda-civic.png";
 export const Card = (props) => {
   const userContext = useContext(UserContext);
   let user = userContext.getUser();
@@ -21,7 +21,7 @@ export const Card = (props) => {
             alt="card"
             width={500}
             height={300}
-            src={props.vehicle.images[1]?.url}
+            src={props.vehicle.images[0]?.url}
           />
         </div>
         <div className="flex flex-col items-end">
