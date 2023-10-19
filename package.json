@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
+    "vercel-build": "prisma generate && next build",
+    "postinstall": "prisma generate",
     "lint": "next lint",
     "deploy": "aws s3 sync out/ s3://c6-pi-grupo3 --acl public-read"
   },
