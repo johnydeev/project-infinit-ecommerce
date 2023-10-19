@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
-
+import NextCors from "nextjs-cors";
 const prisma = new PrismaClient();
 
 const transporter = nodemailer.createTransport({
@@ -17,12 +17,16 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(request) {
+  await NextCors(req, res, {
+    // Options
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
+
   const body = await request.json();
 
-  const {
-    email,
-    password,
-  } = body;
+  const { email, password } = body;
 
   console.log("body", body);
 
@@ -49,7 +53,6 @@ export async function POST(request) {
       },
     });
 
-
     const emailOptions = {
       from: "noreply@infinit.com",
       to: email,
@@ -64,7 +67,6 @@ export async function POST(request) {
         <p style="color: #333333; font-family: Arial, sans-serif;">¡Gracias por elegir INFINIT!</p>
       </div>`,
     };
-    
 
     try {
       await transporter.sendMail(emailOptions);
