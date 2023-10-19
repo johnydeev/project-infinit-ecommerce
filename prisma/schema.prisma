@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -32,7 +32,7 @@ model vehicle {
 
 model brand {
   idbrand Int     @id @default(autoincrement())
-  name    String  @unique(map: "name_UNIQUE")
+  name    String  @unique(map: "brand_name") 
   url     String
   models  model[]
   deleted Boolean
@@ -40,7 +40,7 @@ model brand {
 
 model model {
   idmodel      Int       @id @default(autoincrement())
-  name         String    @unique(map: "name_UNIQUE")
+  name         String    @unique(map: "model_name")
   vehicles     vehicle[]
   brand        brand?    @relation(fields: [brandIdbrand], references: [idbrand])
   brandIdbrand Int?
