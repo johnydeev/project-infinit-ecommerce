@@ -12,6 +12,11 @@ export const Card = (props) => {
     props.vehicle.favorites &&
     props.vehicle.favorites.length &&
     props.vehicle.favorites.some((favorite) => favorite.iduser === user.id);
+
+
+    console.log('===============props.vehicle=====================');
+    console.log(props.vehicle);
+    console.log('==============props.vehicle======================');
   return (
     <div className=" w-full  m-3 rounded-2xl overflow-hidden shadow-md flex flex-col font-poppins hover:shadow-lg transition-all duration-200">
       <div className="flex items-center justify-between p-4">
