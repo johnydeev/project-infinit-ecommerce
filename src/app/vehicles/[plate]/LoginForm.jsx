@@ -74,8 +74,7 @@ export default function Login({idvehicle,setShowLoginModal}) {
 
   return (
     <div className="flex  flex-col  bg-white justify-around">
-      
-      <div className="flex min-h-full flex-1 flex-col items-center px-6 py-12 lg:px-8">          
+           <div className="flex min-h-full flex-1 flex-col items-center px-6 py-12 lg:px-8">          
             <div className="relative flex justify-center items-center w-full"> 
               <Link href="/">
                   <Infinit />
@@ -86,9 +85,7 @@ export default function Login({idvehicle,setShowLoginModal}) {
               >
                   X
               </button>
-            </div>
-          
-
+            </div>       
         <p className="text-lg sm:text-2xl worksans-regular mt-10 border-b-primary border-b-4 pb-2 ">
           Sign in to your account
         </p>

@@ -12,12 +12,11 @@ import {
   AiOutlineEdit,
   AiOutlineDelete,
 } from "react-icons/ai";
-import { LiaKeySolid } from "react-icons/lia";
-
-import { BsNut } from "react-icons/bs";
-import { GoStack } from "react-icons/go";
+import { PiHeartDuotone, PiNutBold } from "react-icons/pi";
+import { RiQuestionLine, RiHistoryLine } from "react-icons/ri";
 import { Infinit } from "./Infinit";
 import axios from "axios";
+import 'flowbite'; 
 import { UserContext } from "./context/UserContext";
 
 export const Navbar = () => {
@@ -111,29 +110,46 @@ export const Navbar = () => {
         </div>
         <ul className="hidden lg:flex items-center gap-12 font-poppins">
           <li className="text-lg link-item">
-            <Link href="/rent">Rent</Link>
-          </li>
-          <li className="text-lg link-item">
             <Link href="/fleet">Fleet</Link>
           </li>
-          <li className="text-lg link-item">
-            <Link href="/services">Services</Link>
-          </li>
 
-          {user && (
+          {user ? (
             <li className="text-lg link-item">
               <Link href="/favorites">Favorites</Link>
             </li>
-          )}  
+          )
+        :
+        (
+          <li className="text-lg text-slate-300">
+            <button data-tooltip-target="tooltip-default" type="button">Favorites</button>
+            <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-400 rounded-lg shadow-sm opacity-0 tooltip">
+                For registered users
+                  <div className="tooltip-arrow" data-popper-arrow></div>
+              </div>
+          </li>
+        )}  
           
           <li className="text-lg link-item">
             <Link href="/about">About</Link>
           </li>
-          {user && (
+          {user ? (
             <li className="text-lg link-item">
               <Link href={`/history/${user2.id}`}>History</Link>
             </li>
-          )}
+          )
+        :
+        (
+          <>
+            <li className="text-lg text-slate-300">
+
+              <button data-tooltip-target="tooltip-default" type="button">History</button>
+              <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-400 rounded-lg shadow-sm opacity-0 tooltip">
+                For registered users
+                  <div className="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </li>
+          </>
+        )}
 
           {isAdmin === true ? (
             <li className="">
@@ -315,16 +331,7 @@ export const Navbar = () => {
         } transition-all duration-300 ease-in-out border-r-2 border-b-2 z-10 flex flex-col justify-between py-6`}
       >
         <ul className="flex flex-col gap-8 font-secondary mt-4">
-          <li className="font-bold p-4 w-full">
-            <Link
-              href="/rent"
-              className="flex items-center gap-4"
-              onClick={closeSidebar}
-            >
-              <LiaKeySolid size={25} />
-              <p>Rent</p>
-            </Link>
-          </li>
+      
           <li className="font-bold p-4  w-full ">
             <Link
               href="/fleet"
@@ -335,38 +342,72 @@ export const Navbar = () => {
               <p>Fleet</p>
             </Link>
           </li>
+
+        { user ?          
           <li className="font-bold p-4  w-full ">
             <Link
-              href="/services"
-              className="flex items-center gap-4"
+              href="/favorites"
+              className="flex items-center gap-4 "
               onClick={closeSidebar}
             >
-              <GoStack size={25} />
-              <p>Services</p>
+              <PiHeartDuotone size={25} />
+              <p>Favorites</p>
             </Link>
           </li>
+          :
+          <li className="font-bold p-4  w-full ">
+          <div
+            className="flex items-center gap-4 text-slate-300 "
+          >
+            <PiHeartDuotone size={25} />
+            <p>Favorites</p>
+          </div>
+        </li>}
+
+          <li className="font-bold p-4  w-full ">
+            <Link
+              href="/about"
+              className="flex items-center gap-4 "
+              onClick={closeSidebar}
+            >
+              <RiQuestionLine size={25} />
+              <p>About</p>
+            </Link>
+          </li>
+
+        {user ?
+          <li className="font-bold p-4  w-full ">
+            <Link
+              href={`/history/${user2.id}`}
+              className="flex items-center gap-4 "
+              onClick={closeSidebar}
+            >
+              <RiHistoryLine size={25} />
+              <p>History</p>
+            </Link>
+          </li>
+          :
+          <li className="font-bold p-4  w-full ">
+            <div
+              className="flex items-center gap-4 text-slate-300"
+            >
+              <RiHistoryLine size={25} />
+              <p>History</p>
+            </div>
+          </li>}
+
           {isAdmin && (
             <li className="font-bold p-4  w-full cursor-pointer ">
               <div
                 className="flex items-center gap-4"
                 onClick={managementClickMobile}
               >
-                <BsNut size={25} />
+                <PiNutBold size={25} />
                 <p>Management</p>
               </div>
               {/* </Link> */}
             </li>
           )}
-          <li className="font-bold p-4  w-full ">
-            <Link
-              href="/services"
-              className="flex items-center gap-4"
-              onClick={closeSidebar}
-            >
-              <AiOutlineInfoCircle size={25} />
-              <p>Why us?</p>
-            </Link>
-          </li>
         </ul>
 
         {user == null ? (

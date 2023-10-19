@@ -22,7 +22,7 @@ export const Footer = () => {
   const [showDropContact, setShowDropContact] = useState(false);
 
   return (
-    <div className="my-16 font-poppins">
+    <div className="my-20 font-poppins">
       <div className="block md:hidden ">
         <footer>
           <ul>
@@ -65,34 +65,22 @@ export const Footer = () => {
       <div className="hidden md:block">
         <footer className="flex justify-evenly items-baseline">
           <div className="space-y-4">
-            <p className="uppercase">Store</p>
+            <p className="uppercase font-bold">Store</p>
             <StoreLinks />
           </div>
           <div className="space-y-4">
-            <p className="uppercase">About</p>
+            <p className="uppercase font-bold">About</p>
             <AboutLinks />
           </div>
           <div className="space-y-4">
-            <p className="uppercase">Assistance</p>
+            <p className="uppercase font-bold">Assistance</p>
             <AssistanceLinks />
           </div>
           <div className="space-y-4">
-            <p className="uppercase">Contact us</p>
+            <p className="uppercase font-bold">Contact us</p>
             <ContactLinks />
           </div>
         </footer>
-      </div>
-      <div className="flex flex-col justify-center sm:items-center gap-1 mt-12 items-center">
-        <h1>DOWNLOAD APP</h1>
-
-        <div className="flex items-baseline gap-6 mt-2">
-          <Link href="/apple" className="hover:underline">
-            <BsApple size={30} />
-          </Link>
-          <Link href="/android" className="hover:underline">
-            <BsAndroid2 size={30} />
-          </Link>
-        </div>
       </div>
     </div>
   );
@@ -141,25 +129,25 @@ const StoreLinks = () => {
 const AboutLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2 px-6 md:px-0">
-      <Link href="/store-locator" className="hover:underline">
+      <button className="hover:underline">
         Store locator
-      </Link>
+      </button>
     </div>
   );
 };
 
 const AssistanceLinks = () => {
   return (
-    <div className="flex flex-col gap-3 mb-2 px-6 md:px-0">
-      <Link href="/faq" className="hover:underline">
+    <div className="flex flex-col gap-3 mb-2 px-6 md:px-0 items-start">
+      <button  className="hover:underline">
         FAQ
-      </Link>
-      <Link href="/service" className="hover:underline">
+      </button>
+      <button className="hover:underline">
         On the go service
-      </Link>
-      <Link href="/consumer-defense" className="hover:underline">
+      </button>
+      <button className="hover:underline">
         Consumer defense
-      </Link>
+      </button>
     </div>
   );
 };
@@ -167,12 +155,12 @@ const AssistanceLinks = () => {
 const ContactLinks = () => {
   return (
     <div className="mt-4 flex flex-col items-start gap-6 px-6 md:px-0">
-      <Link href="/chat" className="flex items-center gap-3">
+      <button className="flex items-center gap-3">
         <BsFillChatTextFill size={15} />
         <p className="hover:underline">Chat with us</p>
-      </Link>
+      </button>
 
-      <Link href="/whatsapp" className="flex flex-col">
+      <button className="flex flex-col">
         <div className="flex items-center gap-3">
           <div className="w-5 md:w-6">
             <BsWhatsapp size={15} />
@@ -187,7 +175,7 @@ const ContactLinks = () => {
           <span className="text-gray-500 text-sm">Mon-Fri 08am - 09pm</span>
           <span className="text-gray-500 text-sm">Sat-Sun 09am - 09pm</span>
         </div>
-      </Link>
+      </button>
     </div>
   );
 };

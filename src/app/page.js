@@ -1,6 +1,5 @@
 "use client";
 import { shuffle } from "@/utils/arrayUtilities";
-import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import bluecar from "@/assets/images/blue-car.jpg";
 
@@ -12,7 +11,9 @@ import { CardList } from "@/components/CardList";
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Pagination, Autoplay } from 'swiper';
+import 'swiper/css/pagination';
+
 
 export default function Home() {
   const [vehicles, setVehicles] = useState([]);
@@ -46,15 +47,32 @@ export default function Home() {
       <Hero />
       <div className=" flex-wrap justify-center items-center gap-4 mt-20 hidden lg:flex">
         {categories.map((category) => {
-          return <Category category={category} />;
+          return <CategoryHome category={category} />;
         })}
       </div>
       <div className=" flex-wrap justify-center items-center gap-4 mt-20 flex lg:hidden">
-        <Swiper slidesPerView={1} modules={[Pagination, Navigation]} navigation pagination>
+        <Swiper 
+          breakpoints={{
+            450: {
+              slidesPerView: 2,
+            },
+            600: {
+              slidesPerView: 3,
+            },
+            900: {
+              slidesPerView: 4,
+            }
+          }}
+        pagination={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]} >
           {categories.map((category) => {
-            return (
-              <SwiperSlide>
-                <Category category={category} />
+            return ( 
+              <SwiperSlide className="pb-10">
+                <CategoryHome category={category} />
               </SwiperSlide>
             );
           })}
@@ -102,12 +120,12 @@ const Hero = () => {
   );
 };
 
-const Category = ({ category }) => {
+const CategoryHome = ({ category }) => {
   return (
     <Link
       href={`/fleet/${category.name}`}
-      className="w-48 h-24 rounded-xl bg-cover bg-center relative 
-      before:bg-black before:content-{''} before:w-full before:h-full before:absolute before:opacity-20"
+      className="w-48 h-24 rounded-xl bg-cover bg-center relative mx-1
+      before:bg-black before:content-{''} before:w-full before:h-full before:absolute before:opacity-20 before:rounded-xl"
       style={{
         backgroundImage: `url(${category.url})`,
       }}
