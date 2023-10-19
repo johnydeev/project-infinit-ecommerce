@@ -10,7 +10,8 @@ import { MdEdit } from "react-icons/md";
 import { Category } from "./Category";
 
 export const ModCar = ({ vehicles, firstIndex, lastIndex }) => {
-  const apiUrl = "http://localhost:3000/api/vehicle/";
+  const URL = process.env.API_URL;
+  const apiUrl = `${URL}/api/vehicle/`;
   const [showModal, setShowModal] = useState(false);
   const { isAdmin } = useContext(UserContext);
 
@@ -123,7 +124,7 @@ export const ModCar = ({ vehicles, firstIndex, lastIndex }) => {
 
   const handlerEdit = (e) => {
     e.preventDefault();
-    console.log('Entra aca');
+    console.log("Entra aca");
 
     const fields = [
       { state: price, setter: setPriceErr, id: "#priceInput" },
@@ -437,7 +438,7 @@ export const ModCar = ({ vehicles, firstIndex, lastIndex }) => {
                         })}
                       </select>
                     </div>
-                 {/*    {dealerErr && (
+                    {/*    {dealerErr && (
                       <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                         You must choose the dealer of your car
                       </span>

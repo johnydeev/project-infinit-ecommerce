@@ -17,8 +17,6 @@ const remPat = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "export",
-
   images: {
     domains: dom,
     remotePatterns: remPat,

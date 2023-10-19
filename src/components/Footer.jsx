@@ -86,12 +86,12 @@ export const Footer = () => {
         <h1>DOWNLOAD APP</h1>
 
         <div className="flex items-baseline gap-6 mt-2">
-          <Link href="/apple" className="hover:underline">
+          <p href="/apple" className="hover:underline">
             <BsApple size={30} />
-          </Link>
-          <Link href="/android" className="hover:underline">
+          </p>
+          <p href="/android" className="hover:underline">
             <BsAndroid2 size={30} />
-          </Link>
+          </p>
         </div>
       </div>
     </div>
@@ -125,15 +125,15 @@ const FooterButton = ({ name, selectedState, id }) => {
 const StoreLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2 px-6 md:px-0">
-      <Link href="/products" className="hover:underline">
+      <p href="/products" className="hover:underline">
         Rent
-      </Link>
-      <Link href="/products/sedans" className="hover:underline">
+      </p>
+      <p href="/products/sedans" className="hover:underline">
         Sedans
-      </Link>
-      <Link href="/products/pickups" className="hover:underline">
+      </p>
+      <p href="/products/pickups" className="hover:underline">
         Pick Ups
-      </Link>
+      </p>
     </div>
   );
 };
@@ -141,9 +141,9 @@ const StoreLinks = () => {
 const AboutLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2 px-6 md:px-0">
-      <Link href="/store-locator" className="hover:underline">
+      <p href="/store-locator" className="hover:underline">
         Store locator
-      </Link>
+      </p>
     </div>
   );
 };
@@ -151,15 +151,15 @@ const AboutLinks = () => {
 const AssistanceLinks = () => {
   return (
     <div className="flex flex-col gap-3 mb-2 px-6 md:px-0">
-      <Link href="/faq" className="hover:underline">
+      <p href="/faq" className="hover:underline">
         FAQ
-      </Link>
-      <Link href="/service" className="hover:underline">
+      </p>
+      <p href="/service" className="hover:underline">
         On the go service
-      </Link>
-      <Link href="/consumer-defense" className="hover:underline">
+      </p>
+      <p href="/consumer-defense" className="hover:underline">
         Consumer defense
-      </Link>
+      </p>
     </div>
   );
 };
@@ -167,12 +167,12 @@ const AssistanceLinks = () => {
 const ContactLinks = () => {
   return (
     <div className="mt-4 flex flex-col items-start gap-6 px-6 md:px-0">
-      <Link href="/chat" className="flex items-center gap-3">
+      <p href="/chat" className="flex items-center gap-3">
         <BsFillChatTextFill size={15} />
         <p className="hover:underline">Chat with us</p>
-      </Link>
+      </p>
 
-      <Link href="/whatsapp" className="flex flex-col">
+      <p href="/whatsapp" className="flex flex-col">
         <div className="flex items-center gap-3">
           <div className="w-5 md:w-6">
             <BsWhatsapp size={15} />
@@ -187,7 +187,7 @@ const ContactLinks = () => {
           <span className="text-gray-500 text-sm">Mon-Fri 08am - 09pm</span>
           <span className="text-gray-500 text-sm">Sat-Sun 09am - 09pm</span>
         </div>
-      </Link>
+      </p>
     </div>
   );
 };
