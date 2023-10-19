@@ -21,8 +21,7 @@ export const Card = (props) => {
             alt="card"
             width={500}
             height={300}
-            src={props.vehicle.images[0]?.url}
-            /*   src={honda} */
+            src={props.vehicle.images[0]?.url | honda}
           />
         </div>
         <div className="flex flex-col items-end">
