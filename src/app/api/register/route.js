@@ -68,16 +68,23 @@ export async function POST(request) {
       </div>`,
     };
 
-    try {
-      await transporter.sendMail(emailOptions);
-      console.log("Registration confirmation email sent");
-    } catch (error) {
-      console.error("Error sending registration confirmation email:", error);
+    if (newUser) {
+      try {
+        await transporter.sendMail(emailOptions);
+        console.log("Registration confirmation email sent");
+      } catch (error) {
+        console.error("Error sending registration confirmation email:", error);
+      }
+
+      return NextResponse.json({
+        message: "User registered successfully",
+        user: newUser,
+      });
     }
 
     return NextResponse.json({
-      message: "User registered successfully",
-      user: newUser,
+      message: "Error creating user",
+      status: 500,
     });
   }
 }
