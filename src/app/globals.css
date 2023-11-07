@@ -450,9 +450,87 @@ div.react-datepicker__input-container.react-datepicker__view-calendar-icon input
   text-shadow: 0 0 5px #ffdf00;
 }
 
+.slider-rating{
+  box-shadow: inset 0px -1px 29px -20px rgba(0,0,0,0.47) ; 
+}
+
 /* --------------------------- Fin Estilos Rating --------------------------- */
 
 
-.slider-rating{
-  box-shadow: inset 0px -1px 29px -20px rgba(0,0,0,0.47) ; 
+/* --------------------- Styles for carouser from about --------------------- */
+
+.slider-about {
+  box-shadow: 0px 0px 21px -5px rgba(0,0,0,0.25) inset;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 99vw;
+  
+	&::before,
+	&::after {
+		background: linear-gradient(to right,rgba(243,244,246,255) 0%,rgba(255,255,255,0) 100%);
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+}
+
+.tecnologies{
+  overflow: hidden;
+}
+.tecnologies-ul{
+  position: relative;
+  animation: sliderrr 10s cubic-bezier(0.68, -0.55, 0.27, 1.55 ) infinite;
+}
+
+.tecnologies-li{
+  position: absolute;
+  top: 200%;
+}
+
+@keyframes sliderrr {
+  0% {
+    transform: translateY(0);
+  }
+  12.5% {
+    transform: translateY(-100%);
+  }
+  25% {
+    transform: translateY(-200%);
+  }
+  37.5% {
+    transform: translateY(-300%);
+  }
+  50% {
+    transform: translateY(-400%);
+  }
+  62.5% {
+    transform: translateY(-500%);
+  }
+  75% {
+    transform: translateY(-600%);
+  }
+  87.5% {
+    transform: translateY(-700%);
+  }
+  100% {
+    transform: translateY(-800%);
+  }
+}
+
+b{
+  font-weight: bolder;
 }

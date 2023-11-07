@@ -1,0 +1,9 @@
+export { default as TadeoImage } from "./Tadeo.jpg";
+export { default as FlaviaImage } from "./Flavia.jpg";
+export { default as JonathanImage } from "./Jonathan.jpeg";
+export { default as AlexisImage } from "./Alexis.png";
+export { default as SofiaImage } from "./Sofia.png";
+export { default as DarioImage } from "./Dario.jpeg";
+export { default as TomasImage } from "./Tomas.jpeg";
+export { default as FabrizioImage } from "./Fabrizio.jpeg";
+export { default as JoelImage } from "./Joel.png";
