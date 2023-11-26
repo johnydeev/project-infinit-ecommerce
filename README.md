@@ -1,11 +1,10 @@
 # [INFINIT](https://infinit-ecommerce.vercel.app/)
 
-Ecommerce B2C donde puedes rentar un auto estes donde estes.
 
 [![INFINIT](./src/assets/images/infinit.PNG)](https://infinit-ecommerce.vercel.app/)
 
 
-## Tech Stack  (Stack tecnologico con su respectiva URL)
+## Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
@@ -17,7 +16,7 @@ Ecommerce B2C donde puedes rentar un auto estes donde estes.
 - **File Uploads:** [AWS-S3](https://aws.amazon.com/es/s3/?nc=sn&loc=0)
 
 
-## Features to be implemented  (Funciones a implementar e implementadas)
+## Features to be implemented
 
 - [x] Authentication with **Google Auth**
 - [x] File uploads with **AWS-S3**
@@ -25,9 +24,8 @@ Ecommerce B2C donde puedes rentar un auto estes donde estes.
 - [x] ORM using **Prisma**
 - [x] Database on **MySQL**
 - [x] Storefront with products and categories
-- [x] Seller and customer workflows
 
-## Running Locally  (Paso para correr el proyecto localmente)
+## Running Locally
 
 1. Clone the repository
 
@@ -35,13 +33,13 @@ Ecommerce B2C donde puedes rentar un auto estes donde estes.
    git clone https://github.com/castrojonathand/proyecto-integrador-ecommerce.git
    ```
 
-2. Install dependencies using pnpm
+2. Install dependencies
 
    ```bash
    npm i
    ```
 
-3. Copy the `.env.example` to `.env` and update the variables.
+3. Copy the `.env-example` to `.env` and update the variables.
 
    ```bash
    cp .env-example .env
