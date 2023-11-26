@@ -1,5 +1,7 @@
 # [INFINIT](https://infinit-ecommerce.vercel.app/)
 
+Project in which I actively contributed with my colleagues where a large human group was formed.
+
 [![INFINIT](./src/assets/images/infinit.PNG)](https://infinit-ecommerce.vercel.app/)
 
 
