@@ -1,6 +1,5 @@
 # [INFINIT](https://infinit-ecommerce.vercel.app/)
 
-
 [![INFINIT](./src/assets/images/infinit.PNG)](https://infinit-ecommerce.vercel.app/)
 
 
@@ -18,12 +17,12 @@
 
 ## Features to be implemented
 
-- [x] Authentication with **Google Auth**
-- [x] File uploads with **AWS-S3**
 - [x] Newsletter subscription with **Nodemailer**
 - [x] ORM using **Prisma**
-- [x] Database on **MySQL**
+- [x] Database on **PostgreSQL**
 - [x] Storefront with products and categories
+- [ ] Authentication with **Google Auth**
+- [ ] File uploads with **AWS-S3**
 
 ## Running Locally
 
