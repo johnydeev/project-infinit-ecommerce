@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function GET(request, context) {
-  console.log("La función GET ha sido llamada.");
   try {
     /*    const urlParts = request.url.split("/");
     const plate = urlParts[urlParts.length - 1];

@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 
 // Método POST
 export async function POST(request) {
-  console.log("The POST function has been called.");
   try {
     const body = await request.json();
 
@@ -81,7 +80,6 @@ export async function POST(request) {
 
 // Método GETALL
 export async function GET() {
-  console.log("The GETALL VEHICLES function has been called.");
   try {
     const cars = await prisma.vehicle.findMany({
       where: {
