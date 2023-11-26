@@ -27,7 +27,6 @@ export async function POST(request) {
 
 
 export async function GET() {
-    console.log("The GETALL function has been called.");
     try {
       const specifications = await prisma.specification.findMany();
       return NextResponse.json(specifications, { status: 200, data: specifications });

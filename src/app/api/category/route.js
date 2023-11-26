@@ -33,7 +33,6 @@ export async function POST(request) {
 }
 
 export async function GET() {
-  console.log("The GETALL function has been called.");
   try {
     const categories = await prisma.category.findMany({
       where: { deleted: false },
