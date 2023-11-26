@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [INFINIT](https://infinit-ecommerce.vercel.app/)
 
-## Getting Started
+Ecommerce B2C donde puedes rentar un auto estes donde estes.
 
-First, run the development server:
+[![INFINIT](./src/assets/images/infinit.PNG)](https://infinit-ecommerce.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack  (Stack tecnologico con su respectiva URL)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js](https://nextjs.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **User Management:** [Clerk](https://clerk.com)
+- **ORM:** [Prisma](https://www.prisma.io/)
+- **UI Components:** [Emotion](https://emotion.sh/docs/introduction)
+                     [MaterialUI](https://mui.com/)
+- **Email:** [Nodemailer](https://nodemailer.com/)
+- **File Uploads:** [AWS-S3](https://aws.amazon.com/es/s3/?nc=sn&loc=0)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Features to be implemented  (Funciones a implementar e implementadas)
 
-To learn more about Next.js, take a look at the following resources:
+- [x] Authentication with **Google Auth**
+- [x] File uploads with **AWS-S3**
+- [x] Newsletter subscription with **Nodemailer**
+- [x] ORM using **Prisma**
+- [x] Database on **MySQL**
+- [x] Storefront with products and categories
+- [x] Seller and customer workflows
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running Locally  (Paso para correr el proyecto localmente)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/castrojonathand/proyecto-integrador-ecommerce.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies using pnpm
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# dh-3
-# infinit-ecommerce
+   ```bash
+   npm i
+   ```
+
+3. Copy the `.env.example` to `.env` and update the variables.
+
+   ```bash
+   cp .env-example .env
+   ```
+
+4. Start the development server
+
+   ```bash
+   npm run dev
+   ```
+
+## How do I deploy this?
+
+Follow the deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+<!-- 
+## Contributing
+
+Contributions are welcome! Please open an issue if you have any questions or suggestions. Your contributions will be acknowledged. See the [contributing guide](./CONTRIBUTING.md) for more information. -->
+
+## Contributors
+
+Thanks goes to these wonderful people for their contributions:
+
+<p align="center">
+ <a href="https://github.com/sadmann7/skateshop/graphs/contributors">
+   <img src="https://contrib.rocks/image?repo=castrojonathand/proyecto-integrador-ecommerce" />
+ </a>
+</p>
+
+<p align="center">
+ Made with <a rel="noopener noreferrer" target="_blank" href="https://contrib.rocks">contrib.rocks</a>
+</p>
+

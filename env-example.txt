@@ -1,0 +1,12 @@
+
+DATABASE_URL="your-data-base"
+
+PORT=3000
+AWS_ACCESS_KEY_ID="aws-key-id"
+AWS_SECRET_ACCESS_KEY="aws-secret-key"
+S3_REGION="region"
+S3_BUCKET="your-bucket-name"
+JWT_SECRET="jwt-secret"
+
+EMAIL_USER="your-email"
+EMAIL_PASS="your-pass-email"
