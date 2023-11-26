@@ -9,7 +9,6 @@ Project in which I actively contributed with my colleagues where a large human g
 
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
-- **User Management:** [Clerk](https://clerk.com)
 - **ORM:** [Prisma](https://www.prisma.io/)
 - **UI Components:** [Emotion](https://emotion.sh/docs/introduction)
                      [MaterialUI](https://mui.com/)
