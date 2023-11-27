@@ -22,6 +22,7 @@ Project in which I actively contributed with my colleagues where a large human g
 - [x] ORM using **Prisma**
 - [x] Database on **PostgreSQL**
 - [x] Storefront with products and categories
+- [x] Is responsive
 - [ ] Authentication with **Google Auth**
 - [ ] File uploads with **AWS-S3**
 
