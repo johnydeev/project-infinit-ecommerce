@@ -9,7 +9,7 @@
     "vercel-build": "prisma generate && next build",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "deploy": "aws s3 sync out/ s3://c6-pi-grupo3 --acl public-read"
+    
   },
   "prisma": {
     "seed": "node --loader ts-node/esm prisma/seed.ts"
