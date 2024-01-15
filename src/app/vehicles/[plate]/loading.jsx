@@ -8,7 +8,7 @@ export default function LoadingScreen() {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-
+    
     return () => clearTimeout(timer);
   }, []);
 

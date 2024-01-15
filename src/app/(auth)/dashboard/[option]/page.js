@@ -14,15 +14,11 @@ import { MdNoAccounts, MdOutlineMobileOff } from "react-icons/md";
 import LoadingScreenDashboard from '../loading';
 
 
-
-
 const DashboardPage = () => {
   const router = useRouter();
   const path = usePathname();
   const [vehicles, setVehicles] = useState([])
   const { isAdmin } = useContext(UserContext)
-
-
 
   
   let screenWidth;
