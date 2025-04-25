@@ -66,7 +66,7 @@ Thanks goes to these wonderful people for their contributions:
 
 <p align="center">
  <a href="https://github.com/sadmann7/skateshop/graphs/contributors">
-   <img src="https://contrib.rocks/image?repo=castrojonathand/proyecto-integrador-ecommerce" />
+   <img src="https://contrib.rocks/image?repo=castrojonathand/project-infinit-ecommerce" />
  </a>
 </p>
 
